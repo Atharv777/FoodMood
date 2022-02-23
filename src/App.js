@@ -11,16 +11,16 @@ function App() {
 
     return (
         <>
-            <div className="container px-10 font-exo">
+            <div className="px-10 font-exo">
                 <Header />
                 <section className="w-full">
-                    <div className="rounded-3xl bg-gray-100 flex flex-row justify-between">
-                        <div className="w-3/6 text-md p-20 flex flex-col justify-center items-center">
-                            <h1 className="text-6xl font-bold">Food Mood</h1>
-                            <p className="mt-7 text-center text-xl text-gray-700">We provide a variety of recipes including chinese, italian, spanish and mexican. You will also get to know the detailed nutritional information.</p>
+                    <div className="rounded-3xl bg-gray-100 flex lg:flex-row flex-col justify-between">
+                        <div className="lg:w-3/6 w-full text-md sm:p-20 p-5 flex flex-col justify-center items-center">
+                            <h1 className="sm:text-6xl text-5xl font-bold">Food Mood</h1>
+                            <p className="mt-7 text-center sm:text-xl text-lg text-gray-700">We provide a variety of recipes including chinese, italian, spanish and mexican. You will also get to know the detailed nutritional information.</p>
                         </div>
 
-                        <img src={HeroBannerImg} className="w-3/6 rounded-3xl" draggable="false" />
+                        <img src={HeroBannerImg} className="lg:w-3/6 w-full rounded-3xl" draggable="false" />
 
                     </div>
                 </section>
@@ -51,7 +51,7 @@ function App() {
                         <SiYoutube />
                     </div>
                 </div>
-                <div className="mt-9 flex flex-row justify-center items-center divide-x-2 divide-gray-500">
+                <div className="mt-9 flex sm:flex-row flex-col justify-center items-center sm:divide-x-2 sm:divide-gray-500">
                     <p className="px-2">Copyright &#169; FoodMood 2022</p>
                     <p className="px-2">Made with ❤ by Atharv varshney</p>
                 </div>

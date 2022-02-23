@@ -66,8 +66,8 @@ export default function RecipeFinder() {
 
     return (
         <div className="w-full mb-20">
-            <div className="container flex justify-center items-center">
-                <div className="w-full flex flex-row">
+            <div className="flex justify-center items-center">
+                <div className="w-full flex md:flex-row flex-col justify-center">
                     <div className="relative w-full ">
                         <div className="absolute left-5 flex items-center h-14">
                             <AiOutlineSearch size="1.5rem" color="#575757" />
@@ -80,28 +80,30 @@ export default function RecipeFinder() {
                             placeholder="Search Recipes"
                         />
                     </div>
-                    <select value={healthLabel} onChange={(e) => setHealthLabel(e.target.value)} className="bg-gray-50 pl-2 py-1 border border-gray-200 rounded-xl ml-3">
-                        <option onClick={() => { setHealthLabel("All") }}>{"All"}</option>
-                        <option onClick={() => { setHealthLabel("Vegan") }}>{"Vegan"}</option>
-                        <option onClick={() => { setHealthLabel("Vegetarian") }}>{"Vegetarian"}</option>
-                        <option onClick={() => { setHealthLabel("Paleo") }}>{"Paleo"}</option>
-                        <option onClick={() => { setHealthLabel("Dairy-free") }}>{"Dairy-free"}</option>
-                        <option onClick={() => { setHealthLabel("Gluten-free") }}>{"Gluten-free"}</option>
-                        <option onClick={() => { setHealthLabel("Wheat-free") }}>{"Wheat-free"}</option>
-                        <option onClick={() => { setHealthLabel("Low-sugar") }}>{"Low-sugar"}</option>
-                        <option onClick={() => { setHealthLabel("Egg-free") }}>{"Egg-free"}</option>
-                        <option onClick={() => { setHealthLabel("Tree-nut-free") }}>{"Tree-nut-free"}</option>
-                        <option onClick={() => { setHealthLabel("Soy-free") }}>{"Soy-free"}</option>
-                        <option onClick={() => { setHealthLabel("Fish-free") }}>{"Fish-free"}</option>
-                        <option onClick={() => { setHealthLabel("Shellfish-free") }}>{"Shellfish-free"}</option>
-                    </select>
-                    <button onClick={() => { handleSearch() }} className="bg-gray-50 hover:bg-gray-100 px-5 border border-gray-200 rounded-xl ml-3 text-lg font-bold">Search</button>
+                    <div className="flex flex-row h-14 sm:w-auto w-full md:mt-0 mt-2 md:justify-start justify-center">
+                        <select value={healthLabel} onChange={(e) => setHealthLabel(e.target.value)} className="h-14 bg-gray-50 pl-2 py-1 border border-gray-200 rounded-xl ml-2">
+                            <option onClick={() => { setHealthLabel("All") }}>{"All"}</option>
+                            <option onClick={() => { setHealthLabel("Vegan") }}>{"Vegan"}</option>
+                            <option onClick={() => { setHealthLabel("Vegetarian") }}>{"Vegetarian"}</option>
+                            <option onClick={() => { setHealthLabel("Paleo") }}>{"Paleo"}</option>
+                            <option onClick={() => { setHealthLabel("Dairy-free") }}>{"Dairy-free"}</option>
+                            <option onClick={() => { setHealthLabel("Gluten-free") }}>{"Gluten-free"}</option>
+                            <option onClick={() => { setHealthLabel("Wheat-free") }}>{"Wheat-free"}</option>
+                            <option onClick={() => { setHealthLabel("Low-sugar") }}>{"Low-sugar"}</option>
+                            <option onClick={() => { setHealthLabel("Egg-free") }}>{"Egg-free"}</option>
+                            <option onClick={() => { setHealthLabel("Tree-nut-free") }}>{"Tree-nut-free"}</option>
+                            <option onClick={() => { setHealthLabel("Soy-free") }}>{"Soy-free"}</option>
+                            <option onClick={() => { setHealthLabel("Fish-free") }}>{"Fish-free"}</option>
+                            <option onClick={() => { setHealthLabel("Shellfish-free") }}>{"Shellfish-free"}</option>
+                        </select>
+                        <button onClick={() => { handleSearch() }} className="h-14 bg-gray-50 hover:bg-gray-100 px-5 border border-gray-200 rounded-xl ml-3 text-lg font-bold">Search</button>
+                    </div>
                 </div>
             </div>
 
             {
                 recipes.length > 0 && !loading &&
-                <div className="grid gap-20 grid-cols-3 w-full mt-5">
+                <div className="grid sm:gap-20 gap-10 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 w-full mt-5">
                     {recipes.map((recipe) => {
                         return (
                             <RecipeCard recipe={recipe.recipe} />
